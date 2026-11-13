@@ -4,6 +4,7 @@ from psycopg2.extras import RealDictCursor
 BRAND = os.environ.get("CCTS_BRAND", "CarbonTrack CCTS")  # apna brand naam yaha badlo (white-label)
 st.set_page_config(BRAND, "🌍", layout="wide", initial_sidebar_state="expanded")
 st.markdown("""<style>
+#MainMenu,footer,[data-testid=stDecoration]{visibility:hidden}
 #MainMenu,footer,[data-testid=stToolbar]{visibility:hidden}
 .block-container{padding-top:2rem}
 h1{color:#0b3d2e}
