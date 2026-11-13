@@ -2,9 +2,9 @@ import streamlit as st, psycopg2, hashlib, os, datetime as dt, pandas as pd
 from psycopg2.extras import RealDictCursor
 
 BRAND = os.environ.get("CCTS_BRAND", "CarbonTrack CCTS")  # apna brand naam yaha badlo (white-label)
-st.set_page_config(BRAND, "🌍", layout="wide")
+st.set_page_config(BRAND, "🌍", layout="wide", initial_sidebar_state="expanded")
 st.markdown("""<style>
-#MainMenu,footer,[data-testid=stToolbar]{visibility:hidden}
+#MainMenu,footer,[data-testid=stDecoration]{visibility:hidden}
 .block-container{padding-top:2rem}
 h1{color:#0b3d2e}
 [data-testid=stMetric]{background:#fff;border:1px solid #dfe9e3;border-left:5px solid #1b8a5a;border-radius:12px;padding:14px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
