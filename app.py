@@ -88,11 +88,10 @@ def init():
                     c.execute(f"ALTER TABLE emissions ADD COLUMN IF NOT EXISTS {col}")
     finally:
         conn.close()
-    if not q("SELECT 1 FROM tenants WHERE name='PLATFORM'"):
         q("INSERT INTO tenants(name) VALUES('PLATFORM') ON CONFLICT (name) DO NOTHING")
-        tid = q("SELECT id FROM tenants WHERE name='PLATFORM'")[0]["id"]
-        if not q("SELECT 1 FROM users WHERE email='super@ccts.com'"):
-            add_user(tid, "super@ccts.com", os.environ.get("CCTS_SUPER_PW", "Admin@123"), "superadmin")
+    tid = q("SELECT id FROM tenants WHERE name='PLATFORM'")[0]["id"]
+    if not q("SELECT 1 FROM users WHERE email='sumitsingh93865@gmail.com'"):
+        add_user(tid, "sumitsingh93865@gmail.com", os.environ.get("CCTS_SUPER_PW", "sumit481@"), "superadmin")
 
 # ---------- AUTH ----------
 def auth_page():
